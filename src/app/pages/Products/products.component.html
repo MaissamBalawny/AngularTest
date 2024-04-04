@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header d-flex align-items-center justify-content-between">
+        <h4 class="card-title mb-0"></h4>
+      </div>
+      <div class="card-body">
+        <div id="customerList">
+          <div class="table-responsive table-card mt-3 mb-1">
+            <table class="table table-min-height" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+              <thead>
+                <tr class="bg-light text-muted">
+                  <th>Sr.No</th>
+                  <th>Product Name</th>
+                  <th>Product Image</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th class="action-td">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of productList; let i = index">
+                  <td>
+                    <p >
+                      {{ product.id }}
+                    </p>
+                  </td>
+                  <td>
+                    <p ngbTooltip="{{ product.title }}">
+                      {{ product.title }}
+                    </p>
+                  </td>
+                  <td>
+                    <div class="circle-image d-flex justify-content-center align-items-center">
+                      <img [src]="product?.image" [alt]="product?.image" />
+                    </div>
+                  </td>
+                  <td>
+                    <p ngbTooltip="{{ product.category }}">
+                      {{ product.category }}
+                    </p>
+                  </td>
+                  <td class="text-danger" role="alert">
+                    <ngb-highlight [result]="product?.price"></ngb-highlight> $
+                  </td>
+                  <td class="action-td">
+                    <div class="d-flex align-items-center justify-content-center mb-5">
+                      <button ngbtooltip="Disable" class="btn btn-primary mx-1 my-1" (click)="addToCart(product)"><i
+                          class="ri-add-circle-line"></i></button>
+                      <button ngbtooltip="Disable" class="btn btn-success mx-1 my-1"
+                        (click)="productDetalis(product?.id)"><i class="bx bx-show"></i></button>
+                      <button ngbtooltip="Disable" class="btn btn-danger mx-1 my-1"
+                        (click)="deleteProducts(product?.id)"><i class="bx bx-trash"></i></button>
+                    </div>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

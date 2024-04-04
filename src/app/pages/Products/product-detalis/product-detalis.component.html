@@ -1,0 +1,33 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="backDropModalTitle">Product Detalis</h5>
+        <button type="button" class="btn-close" (click)="dismiss()" aria-label="Close"></button>
+    </div>
+
+        <div class="row">
+            <div class="col-lg-12 p-4">
+                <div class="card shadow-lg mb-4" >
+                    <div class="card-body">
+                        <div class="row"> 
+                            <div class="col-lg-12 ">  
+                                    <h6>Description: </h6>
+                                    <p>{{data.description}}</p>
+                            </div>
+                            <div class="col-lg-6"> 
+                                    <h6>Count </h6>
+                                    <p>{{data.rating.count}}</p>
+                        </div>
+                        <div class="col-lg-6">    
+                                <h6>Rating </h6>
+                                <p>{{data.rating.rate}}</p>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="dismiss()">{{"Close"}}</button>
+    </div>
+

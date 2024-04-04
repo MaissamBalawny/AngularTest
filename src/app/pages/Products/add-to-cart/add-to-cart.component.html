@@ -1,0 +1,45 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="backDropModalTitle">Add Product to Cart</h5>
+        <button type="button" class="btn-close" (click)="dismiss()" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card shadow-lg mb-4" >
+                    <div class="card-body">
+                        <div class="row">
+                         
+
+                            <div class="col-sm-auto col-lg-12 d-flex flex-column mb-2">
+                                <h6>Date:</h6>
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-0 minimal-border dash-filter-picker shadow flatpickr-input" dateFormat="Y-m-d H:i" [enableTime]="true" type="text" mwlFlatpickr [(ngModel)]="currentDate" [value]="date" [altInput]="true" [convertModelValue]="true" mode="single">
+                                    <div class="input-group-text bg-primary border-primary text-white">
+                                        <i class="ri-calendar-2-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-auto col-lg-12 d-flex flex-column mb-2">
+                                <label for="product" class="form-label">Product</label>
+                                <ng-select [(ngModel)]="selectedProductId" bindLabel="title"
+                                    bindValue="id"
+                                 [items]="productList"
+                                    [multiple]="false"></ng-select>
+                            </div>
+                            <div class="col-lg-12">            
+                                    <h6>Quantity:</h6>
+                                    <input class="form-control" type="number" name="quantity"  [(ngModel)]="quantity" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" >Add</button>
+        <button type="button" class="btn btn-outline-secondary" (click)="dismiss()">{{"Close"}}</button>
+    </div>
+</div>
+
